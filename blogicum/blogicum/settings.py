@@ -122,7 +122,7 @@ STATIC_URL = 'static/'
 
 STATICFILES_DIRS = [
     BASE_DIR / 'static_dev',
-    ]
+]
 
 
 TEMPLATES_DIR = BASE_DIR / 'templates'
