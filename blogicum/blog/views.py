@@ -49,10 +49,12 @@ def index(request):
     return render(request, 'blog/index.html', {'posts': posts[::-1]})
 
 
+posts_by_ids = {post['id']: post for post in posts}
+
+
 def post_detail(request, post_id):
     template = 'blog/detail.html'
-    post_dict = {p['id']: p for p in posts}
-    post = post_dict.get(post_id)
+    post = posts_by_ids.get(post_id)
     if post is None:
         raise Http404(
             f'The requested resource with ID {post_id} '
